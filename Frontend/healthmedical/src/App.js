@@ -1,9 +1,16 @@
 import React from 'react';
+import { Router } from 'react-router-dom'
+
+import Routes from './routes/index';
+import history from './services/history'
+
+
 
 function App() {
-  return (
-    <div className="App">
-    </div>
+  return ( 
+    <Router history={history} >
+      <Routes />
+    </Router>
   );
 }
 
