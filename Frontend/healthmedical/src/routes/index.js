@@ -1,15 +1,19 @@
 import React from 'react'
-import { Switch, Route,  } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
+import Route from './Route';
 
 import SignIn from '../pages/signIn';
-import SignUn from '../pages/signUp';
+import SignUp from '../pages/signUp';
+import Dashboard from '../pages/Dashboard';
 
 
 export default function Routes(){
     return(
         <Switch>
-            <Route exact path="/" component={SignIn} />
-            <Route path="/signUp" component={SignUn} />
+            <Route path="/" exact component={SignIn} />
+            <Route path="/signup" component={SignUp} />
+
+            <Route path="/dashboard" component={Dashboard} isPrivate/>
         </Switch>
     );
 }
