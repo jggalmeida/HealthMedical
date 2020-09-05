@@ -1,44 +1,41 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-
+import {Link} from 'react-router-dom';
+import { Form, Input } from '@rocketseat/unform';
 import { 
   Container,
   Imagem,
   DivInput,
   LogoImg,
   Title,
+  ButtonLinkDiv,
   TextInput,
-  InputEmail,
-  ButtonDiv,
-  ButtonSignIn,
-  ButtonLinkDiv
- } from './styles';
+} from './styles';
 
  import logo from '../../assets/Image/Logo.png';
  import img1 from '../../assets/Image/image.png';
 
 export default function signIn() {
+
+  function handleSubmit(data){
+    console.tron.log(data);
+  }
   return (
     <Container>
       <DivInput>
         <LogoImg src={logo} />
         
-        <Title>Sign Up</Title>
+        <Title>Sign In</Title>
+         
+        <Form onSubmit={handleSubmit}>
+          <TextInput>Email: </TextInput>
+          <Input name="email" placeholder="Insira seu E-mail" type="email"/>
         
-        <TextInput>Email: </TextInput>
-        <InputEmail placeholder="Insira seu Email"/>
+          <TextInput>Senha: </TextInput>
+          <Input name="password" placeholder="Insira sua Senha" type="password"/>
         
-        <TextInput>Senha: </TextInput>
-        <InputEmail placeholder="Insira sua Senha"/>
-        
-        <ButtonDiv>
-          <ButtonSignIn>
-              Entrar
-          </ButtonSignIn>
-        </ButtonDiv>
-        <ButtonLinkDiv>
+          <button type="submit">Entrar</button>
           <Link to={"/signup"}>Inscrever-se</Link>
-        </ButtonLinkDiv>
+        </Form>       
       </DivInput>
       <Imagem src={img1} />
     </Container>
