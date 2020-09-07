@@ -7,7 +7,6 @@ import {
   DivInput,
   LogoImg,
   Title,
-  ButtonLinkDiv,
   TextInput,
 } from './styles';
 
@@ -19,6 +18,7 @@ export default function signIn() {
   function handleSubmit(data){
     console.tron.log(data);
   }
+  
   return (
     <Container>
       <DivInput>

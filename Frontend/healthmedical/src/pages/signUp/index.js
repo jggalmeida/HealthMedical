@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import { 
   Container,
@@ -36,7 +36,7 @@ export default function signUp() {
           <Input name="password" placeholder="Insira sua Senha" type="password"/>
         
           <button type="submit">Cadastrar</button>
-          <Link to={"/"}>Entrar</Link>
+          <Link to={"/signin"}>Entrar</Link>
         </Form>       
       </DivInput>
       <Imagem src={img1} />
