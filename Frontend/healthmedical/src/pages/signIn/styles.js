@@ -15,7 +15,7 @@ export const Imagem = styled.img`
 `;
 
 export const LogoImg = styled.img`
-    margin-left: 30%;
+    margin-left: 33%;
     margin-top: 13%;
 `;
 
@@ -81,7 +81,7 @@ export const DivInput = styled.div`
 `;
 
 export const Title = styled.h1`
-    margin-left: 30%;
+    margin-left: 35%;
     margin-top: 5%;
 `;
 
