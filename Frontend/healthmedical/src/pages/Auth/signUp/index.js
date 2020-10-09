@@ -10,8 +10,8 @@ import {
   TextInput,
 } from './styles';
 
- import logo from '../../assets/Image/Logo.png';
- import img1 from '../../assets/Image/image.png';
+ import logo from '../../../assets/Image/Logo.png';
+ import img1 from '../../../assets/Image/image.png';
 
 export default function signUp() {
 
@@ -36,7 +36,7 @@ export default function signUp() {
           <Input name="password" placeholder="Insira sua Senha" type="password"/>
         
           <button type="submit">Cadastrar</button>
-          <Link to={"/signin"}>Entrar</Link>
+          <Link to={"/"}>Entrar</Link>
         </Form>       
       </DivInput>
       <Imagem src={img1} />

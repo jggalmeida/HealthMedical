@@ -1,6 +1,9 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, {useContext} from 'react';
+
 import { Form, Input } from '@rocketseat/unform';
+
+import AuthContext from '../../../contexts/Auth';
+
 import { 
   Container,
   Imagem,
@@ -10,13 +13,15 @@ import {
   TextInput,
 } from './styles';
 
- import logo from '../../assets/Image/Logo.png';
- import img1 from '../../assets/Image/image.png';
+ import logo from '../../../assets/Image/Logo.png';
+ import img1 from '../../../assets/Image/image.png';
 
-export default function signIn() {
+export default function SignIn() {
+  
+  const { AuthLogin } = useContext(AuthContext);
 
-  function handleSubmit(data){
-    console.tron.log(data);
+  function handleSubmit({email, password}){
+    AuthLogin({email, password});
   }
   
   return (
@@ -33,8 +38,8 @@ export default function signIn() {
           <TextInput>Senha: </TextInput>
           <Input name="password" placeholder="Insira sua Senha" type="password"/>
         
-          <button type="submit">Entrar</button>
-          <Link to={"/signup"}>Inscrever-se</Link>
+          <button type="submit" >Entrar</button>
+          
         </Form>       
       </DivInput>
       <Imagem src={img1} />

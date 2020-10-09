@@ -18,13 +18,9 @@ import {
   ConsultasAmanha,
   DadosClienteDiv,
   BtnMenuSair,
-
-
-
-
 } from './styles';
 
-import logo from '../../assets/Image/Logo_Dashboard.png'
+import logo from '../../../assets/Image/Logo_Dashboard.png'
 
 export default function Dashboard() {
   let now = new Date();

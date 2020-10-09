@@ -4,17 +4,22 @@ import { Router } from 'react-router-dom'
 import './config/ReactotronConfig'
 import GlobalStyle from './styles/global';
 
-import Routes from './routes/index';
-import history from './services/history'
+import Routes from './routes/Routes';
+import history from './services/history';
+
+import {AuthProvider} from './contexts/Auth';
 
 
 
 function App() {
-  return ( 
-    <Router history={history} >
-      <Routes />
-      <GlobalStyle />
-    </Router>
+  return (
+    <AuthProvider>
+      <Router history={history} >
+        <Routes />
+        <GlobalStyle />
+      </Router>
+    </AuthProvider> 
+   
   );
 }
 
