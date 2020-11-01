@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Container = styled.div`
   flex: 1;
@@ -8,7 +9,7 @@ export const Container = styled.div`
 
 export const HeaderDiv = styled.div`
     flex-direction: row;
-    height: 18%;
+    height: 15%;
 `;
 
 export const Logo = styled.img`
@@ -129,47 +130,45 @@ export const BtnMenuSair = styled.button`
     }
 `;
 
-export const WelcomeDiv = styled.div`
+
+export const List = styled.div`
+    flex: 1;
+    background-color: rgba(238, 65, 49, 0.4);
+    width: 40%;
+    margin-left: 30%;
     position: absolute;
-    width: 45%;
-    height: 18%;
-    margin-left: 26%;
-    background: rgba(238, 65, 49, 0.4);
-    border-radius: 35px;
-
-    h2{
-        color: #FFF;
-        font: 22px 'roboto', sans-serif;
-        padding: 10px 40px;
-    }
-
-    h3{
-        color: #FFF;
-        font: 20px 'roboto', sans-serif;
-        padding: 10px 40px;
-    }
+    border-radius: 40px;
+    border-color: rgba(238, 65, 49, 0.8);
+    border-width: 1px;
 `;
 
-export const DadosClienteDiv = styled.div`
-    position: absolute;
-    width: 45%;
-    height: 50%;
-    margin-left: 26%;
-    margin-top: 14%;
-    background: rgba(238, 65, 49, 0.4);
-    border-radius: 35px;
+export const ListItens = styled.ul`
+    background-color: rgba(255, 255, 255,0.5);
+    border-radius: 40px;
+    margin-bottom: 3%;
+    margin-left: 25%;
+`;
 
-    h2{
-        color: #FFF;
-        font: 22px 'roboto', sans-serif;
-        margin-left: 8%;
-        margin-top: 5%;
-    }
+export const LiItens = styled.li`
+    list-style: none;
+    margin-left: 10%;
+    margin-top: 2%;
+    font-size: 18px;
+    color: #EE4131;
+`;
 
-    h3{
-        color: #fff;
-        font: 18px 'roboto', sans-serif;
-        margin-left: 10%;
-        margin-top: 2%;
+export const AgendaButton = styled.button`
+    margin-top: 5%;
+    margin-left: 70%;
+    border: 0;
+    height: 30px;
+    width: 26%;
+    background: #EE4131;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #FFF;
+    transition: background 0.1s;
+    &:hover{
+        background: ${darken(0.05, `#EE4131`)}
     }
 `;
