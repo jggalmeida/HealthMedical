@@ -19,7 +19,7 @@ export const Logo = styled.img`
 
 export const BtnUser = styled.button`
    text-decoration: none;
-   font-size: 24px;
+   font-size: 20px;
    margin-left: 55%;
    margin-top: 3%;
    position: absolute;
@@ -60,8 +60,8 @@ export const BtnMenuHome = styled.button`
         text-decoration: none;
         color: #FFF;
         font: 14px 'roboto', sans-serif;
-        font-size: 23px;
-        padding: 10px 80px; 
+        font-size: 20px;
+        padding: 10px; 
 
     }
 `;
@@ -77,8 +77,8 @@ export const BtnMenuAgenda = styled.button`
         text-decoration: none;
         color: #FFF;
         font: 14px 'roboto', sans-serif;
-        font-size: 23px;
-        padding: 10px 80px; 
+        font-size: 20px;
+        padding: 10px; 
     }
 `;
 export const BtnMenuRedeCredenciada = styled.button`
@@ -92,8 +92,8 @@ export const BtnMenuRedeCredenciada = styled.button`
         text-decoration: none;
         color: #FFF;
         font: 14px 'roboto', sans-serif;
-        font-size: 23px;
-        padding: 10px 80px; 
+        font-size: 20px;
+        padding: 10px; 
     }
 `;
 
@@ -108,8 +108,8 @@ export const BtnMenuConsulta = styled.button`
         text-decoration: none;
         color: #FFF;
         font: 14px 'roboto', sans-serif;
-        font-size: 23px;
-        padding: 10px 80px; 
+        font-size: 20px;
+        padding: 10px; 
     }
 `;
 
@@ -124,8 +124,8 @@ export const BtnMenuSair = styled.button`
         text-decoration: none;
         color: #FFF;
         font: 14px 'roboto', sans-serif;
-        font-size: 23px;
-        padding: 10px 80px; 
+        font-size: 20px;
+        padding: 10px; 
     }
 `;
 

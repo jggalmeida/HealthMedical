@@ -1,9 +1,9 @@
-import React, {useContext, useState} from 'react';
-import {Link, useHistory } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { GridList } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { 
+import {
   Container,
   HeaderDiv,
   Logo,
@@ -19,7 +19,8 @@ import {
   ListItens,
   LiItens,
   AgendaButton,
-  
+  Title
+
 
 } from './styles';
 import AuthContext from '../../../contexts/Auth';
@@ -29,7 +30,7 @@ import logo from '../../../assets/Image/Logo_Dashboard.png'
 
 const useStyles = makeStyles((theme) => ({
   gridList: {
-    height: 850,
+    height: 550,
   },
 }));
 
@@ -45,7 +46,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 2,
@@ -54,7 +55,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 3,
@@ -63,7 +64,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 4,
@@ -72,7 +73,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 5,
@@ -81,7 +82,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 6,
@@ -90,7 +91,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 7,
@@ -99,7 +100,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 8,
@@ -108,7 +109,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 9,
@@ -117,7 +118,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 10,
@@ -126,7 +127,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 11,
@@ -135,7 +136,7 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
     {
       id: 12,
@@ -144,14 +145,14 @@ export default function Rede_Credenciada() {
       bairro: 'Centro',
       cidade: 'Sorocaba',
       cep: '18035-085',
-      telefone: '(15) 3329-9849', 
+      telefone: '(15) 3329-9849',
     },
 
 
   ]);
 
 
-  return(
+  return (
     <Container>
       <HeaderDiv>
         <Link to={"/dashboard_Paciente"} >
@@ -182,22 +183,22 @@ export default function Rede_Credenciada() {
         </MenuDiv>
 
         <List>
-        <br/>
-        <GridList className={classes.gridList} >
-        {
-            dados.map(function(data){
-              return(
-                <ListItens key={data.id} >
-                  <LiItens>Clínica: {data.medico}</LiItens>
-                  <LiItens>Endereço: {data.endereco}</LiItens>
-                  <LiItens>Bairro: {data.bairro} - {data.cidade} - {data.cep} </LiItens>
-                  <LiItens>Telefone: {data.telefone}</LiItens>
-                  <AgendaButton onClick={() => history.push(`/agendar_Consulta/${data.id}`)}>Ver Agenda</AgendaButton>
-                </ListItens>
-              )
-            })
-          }
-        </GridList>
+          <Title>Agenda Médica</Title>
+          <GridList className={classes.gridList} >
+            {
+              dados.map(function (data) {
+                return (
+                  <ListItens key={data.id} >
+                    <LiItens>Clínica: {data.medico}</LiItens>
+                    <LiItens>Endereço: {data.endereco}</LiItens>
+                    <LiItens>Bairro: {data.bairro} - {data.cidade} - {data.cep} </LiItens>
+                    <LiItens>Telefone: {data.telefone}</LiItens>
+                    <AgendaButton onClick={() => history.push(`/agendar_Consulta/${data.id}`)}>Ver Agenda</AgendaButton>
+                  </ListItens>
+                )
+              })
+            }
+          </GridList>
         </List>
 
       </BodyDiv>

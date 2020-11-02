@@ -19,7 +19,7 @@ export const Logo = styled.img`
 
 export const BtnUser = styled.button`
    text-decoration: none;
-   font-size: 24px;
+   font-size: 20px;
    margin-left: 55%;
    margin-top: 3%;
    position: absolute;
@@ -60,8 +60,8 @@ export const BtnMenuHome = styled.button`
         text-decoration: none;
         color: #FFF;
         font: 14px 'roboto', sans-serif;
-        font-size: 23px;
-        padding: 10px 80px; 
+        font-size: 20px;
+        padding: 10px; 
 
     }
 `;
@@ -77,8 +77,8 @@ export const BtnMenuAgenda = styled.button`
         text-decoration: none;
         color: #FFF;
         font: 14px 'roboto', sans-serif;
-        font-size: 23px;
-        padding: 10px 80px; 
+        font-size: 20px;
+        padding: 10px; 
     }
 `;
 export const BtnMenuRedeCredenciada = styled.button`
@@ -92,8 +92,8 @@ export const BtnMenuRedeCredenciada = styled.button`
         text-decoration: none;
         color: #FFF;
         font: 14px 'roboto', sans-serif;
-        font-size: 23px;
-        padding: 10px 80px; 
+        font-size: 20px;
+        padding: 10px; 
     }
 `;
 
@@ -108,8 +108,8 @@ export const BtnMenuConsulta = styled.button`
         text-decoration: none;
         color: #FFF;
         font: 14px 'roboto', sans-serif;
-        font-size: 23px;
-        padding: 10px 80px; 
+        font-size: 20px;
+        padding: 10px; 
     }
 `;
 
@@ -124,20 +124,21 @@ export const BtnMenuSair = styled.button`
         text-decoration: none;
         color: #FFF;
         font: 14px 'roboto', sans-serif;
-        font-size: 23px;
-        padding: 10px 80px; 
+        font-size: 20px;
+        padding: 10px; 
     }
 `;
-
 export const List = styled.div`
     flex: 1;
     background-color: rgba(238, 65, 49, 0.4);
-    width: 40%;
+    width: 60%;
+    height: 79%;
     margin-left: 30%;
     position: absolute;
     border-radius: 40px;
     border-color: rgba(238, 65, 49, 0.8);
     border-width: 1px;
+    padding-top: 3%;
 `;
 
 export const ListItens = styled.ul`
@@ -153,4 +154,12 @@ export const LiItens = styled.li`
     margin-top: 2%;
     font-size: 18px;
     color: #EE4131;
+`;
+
+export const Title = styled.h2`
+    margin-left: 40%;
+    padding: 0px;
+    margin-top: -20px;
+    height: 20px;
+    color: rgba(0,0,0,0.4);
 `;
