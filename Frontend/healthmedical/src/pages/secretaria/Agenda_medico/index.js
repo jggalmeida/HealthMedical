@@ -17,6 +17,7 @@ import {
   BtnMenuSair,
   BodyDiv,
   MenuDiv,
+  UserNameLink,
   ConteudoDiv,
   ConteudoHeader,
   AgendamentoDiv,
@@ -29,7 +30,7 @@ import AuthContext from '../../../contexts/Auth'
 import logo from '../../../assets/Image/Logo_Dashboard.png'
 
 
-export default function Agendar_Consulta() {
+export default function Agenda_medica() {
   // const { id } = useParams();
   const { user } = useContext(AuthContext);
   const [date, setDate] = useState(new Date());
@@ -99,27 +100,25 @@ export default function Agendar_Consulta() {
   return (
     <Container>
       <HeaderDiv>
-        <Link to={"/dashboard_Paciente"} >
+        <Link to={"/dashboard_secretaria"} >
           <Logo src={logo} />
         </Link>
-        <BtnUser>
-          <Link to={"/dashboard_Paciente"}>{user.nome}</Link>
-        </BtnUser>
+        <UserNameLink href={"/dashboard_secretaria"}>{user.nome}</UserNameLink>
       </HeaderDiv>
 
       <BodyDiv>
         <MenuDiv>
           <BtnMenuHome>
-            <Link to={"/dashboard_Paciente"}>Dashboard</Link>
+            <Link to={"/dashboard_secretaria"}>Dashboard</Link>
           </BtnMenuHome>
           <BtnMenuAgenda>
-            <Link to={"/agendas_Paciente"}>Agendas</Link>
+            <Link to={"/agenda_medica"}>Agendas</Link>
           </BtnMenuAgenda>
           <BtnMenuRedeCredenciada>
             <Link to={"/rede_Credenciada"}>Rede Credenciada</Link>
           </BtnMenuRedeCredenciada>
           <BtnMenuConsulta>
-            <Link to={"/agendas_Paciente"}>Agendar Consulta</Link>
+            <Link to={"/agenda_medica"}>Agendar Consulta</Link>
           </BtnMenuConsulta>
           <BtnMenuSair>
             <Link to={"/signin"}>Sair</Link>
@@ -146,7 +145,7 @@ export default function Agendar_Consulta() {
                   <Time key={time.time} past={time.past} available={!time.appointment}>
                     <strong>{time.time}</strong>
                     <span>{time.appointment ? time.appointment.nome : 'em aberto'}</span>
-                    <button onClick={() => history.push(`/agendamento_Consulta`)}>{time.appointment ? null : 'Agendar'}</button>
+                    <button onClick={() => history.push(`/agendar_Consulta`)}>{time.appointment ? null : 'Agendar'}</button>
 
                   </Time>
                 ))

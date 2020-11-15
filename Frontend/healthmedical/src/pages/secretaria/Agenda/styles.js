@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Container = styled.div`
   flex: 1;
@@ -24,10 +25,8 @@ export const UserNameLink = styled.a`
     color: #EE4131;
 `;
 
+
 export const BodyDiv = styled.div`
-    flex: 1;
-    width: 100%;
-    height: 82%;
     flex-direction: row;
 `;
 
@@ -39,7 +38,6 @@ export const MenuDiv = styled.div`
     position: absolute;
     flex-direction: column;
 `;
-
 export const BtnMenuHome = styled.button`
     margin-top: 10%;
     position: absolute;
@@ -120,109 +118,54 @@ export const BtnMenuSair = styled.button`
     }
 `;
 
-export const WelcomeDiv = styled.div`
+export const List = styled.div`
+    flex: 1;
+    background-color: rgba(238, 65, 49, 0.4);
+    width: 60%;
+    height: 73%;
+    margin-left: 30%;
     position: absolute;
-    width: 55%;
-    height: 18%;
-    margin-left: 26%;
-    background: rgba(238, 65, 49, 0.4);
+    border-radius: 40px;
+    border-color: rgba(238, 65, 49, 0.8);
+    border-width: 1px;
+    padding-top: 3%;
+`;
+
+export const ListItens = styled.ul`
+    background-color: rgba(255, 255, 255,0.5);
     border-radius: 35px;
+    margin-bottom: 2%;
+    margin-left: 25%;
+`;
 
-    h2{
-        color: #FFF;
-        font: 22px 'roboto', sans-serif;
-        padding: 0px 60px;
-    }
+export const LiItens = styled.li`
+    list-style: none;
+    margin-left: 10%;
+    margin-top: 2%;
+    font-size: 17px;
+    color: #EE4131;
+`;
 
-    h3{
-        color: #FFF;
-        font: 20px 'roboto', sans-serif;
-        padding: 5px 90px;
+export const AgendaButton = styled.button`
+    margin-top: 4%;
+    margin-left: 70%;
+    border: 0;
+    height: 30px;
+    width: 26%;
+    background: #EE4131;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #FFF;
+    transition: background 0.1s;
+    &:hover{
+        background: ${darken(0.05, `#EE4131`)}
     }
 `;
 
-export const ConsultasOntem = styled.div`
-    position: absolute;
-    width: 16%;
-    height: 15%;
-    margin-left: 26%;
-    margin-top: 12%;
-    background: rgba(238, 65, 49, 0.4);
-    border-radius: 35px;
-
-    h2{
-        color: #FFF;
-        font: 16px 'roboto', sans-serif;
-        padding: 0px 38px;
-    }
-
-    h3{
-        color: #FFF;
-        font: 25px 'roboto', sans-serif;
-        padding: 0px 46%;
-    }
-`;
-
-export const ConsultasHoje = styled.div`
-    position: absolute;
-    width: 16%;
-    height: 15%;
-    margin-left: 45.5%;
-    margin-top: 12%;
-    background: rgba(238, 65, 49, 0.4);
-    border-radius: 35px;
-    h2{
-        color: #FFF;
-        font: 16px 'roboto', sans-serif;
-        padding: 0px 45px;
-    }
-    h3{
-        color: #FFF;
-        font: 25px 'roboto', sans-serif;
-        padding: 0px 42%;
-    }
-`;
-
-export const ConsultasAmanha = styled.div`
-    position: absolute;
-    width: 16%;
-    height: 15%;
-    margin-left: 65%;
-    margin-top: 12%;
-    background: rgba(238, 65, 49, 0.4);
-    border-radius: 35px;
-    h2{
-        color: #FFF;
-        font: 16px 'roboto', sans-serif;
-        padding: 0px 33px;
-    }
-    h3{
-        color: #FFF;
-        font: 25px 'roboto', sans-serif;
-        padding: 0px 48%;
-    }
-`;
-
-export const DadosClienteDiv = styled.div`
-    position: absolute;
-    width: 55%;
-    height: 38%;
-    margin-left: 26%;
-    margin-top: 22%;
-    background: rgba(238, 65, 49, 0.4);
-    border-radius: 35px;
-
-    h2{
-        color: #FFF;
-        font: 22px 'roboto', sans-serif;
-        margin-left: 8%;
-        margin-top: 3%;
-    }
-
-    h3{
-        color: #fff;
-        font: 18px 'roboto', sans-serif;
-        margin-left: 10%;
-        margin-top: 1%;
-    }
+export const Title = styled.h2`
+    margin-left: 40%;
+    padding: 0px;
+    margin-top: -20px;
+    height: 20px;
+    color: rgba(0,0,0,0.4);
 `;

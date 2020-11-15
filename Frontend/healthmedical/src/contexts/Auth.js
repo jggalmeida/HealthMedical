@@ -9,10 +9,10 @@ export function AuthProvider({children}){
     const [user, setUser] = useState({
         nome: 'João Almeida Batata Silva',
         email: 'thiagomarinho@rockeseat.com.br',
-        tipo_usuario: 'paciente',
+        tipo_usuario: 'secretaria',
       });
     const [token, setToken] = useState(null); 
-    const [tipo_usuario] = useState('paciente'); 
+    const [tipo_usuario] = useState('secretaria'); 
     const [signed, setSigned] = useState(true);
 
     async function AuthLogin(email, password){
