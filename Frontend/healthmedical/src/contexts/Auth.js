@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { signIn } from '../services/api';
+// import { signIn } from '../services/api';
 // import { useHistory } from 'react-router-dom'
 
 const AuthContext = createContext({ signed: Boolean, tipo_usuario: String, token: String, user: Object, AuthLogin: Function, SignOut: Function});
@@ -16,7 +16,7 @@ export function AuthProvider({children}){
     const [signed, setSigned] = useState(true);
 
     async function AuthLogin(email, password){
-        const {} = await signIn();
+        // const {} = await signIn();
         // setToken(token);
         // setToken('ahuahuaksdgajshg');
         // setUser(user);

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Container = styled.div`
   flex: 1;
@@ -8,11 +9,11 @@ export const Container = styled.div`
 
 export const HeaderDiv = styled.div`
     flex-direction: row;
-    height: 18%;
+    height: 12%;
 `;
 
 export const Logo = styled.img`
-    margin-top: 2%;
+    margin-top: 1%;
     margin-left: 3%;
     margin-bottom: 2%;
 `;
@@ -32,12 +33,20 @@ export const BtnUser = styled.button`
     a{
         color: #EE4131;
         text-decoration: none;
-
     }
 `;
 
 export const BodyDiv = styled.div`
     flex-direction: row;
+`;
+
+export const MenuDiv = styled.div`
+    width: 20%;
+    height: 84.5%;
+    background: rgba(238, 65, 49, 0.7);
+    border-top-right-radius: 40px;
+    position: absolute;
+    flex-direction: column;
 `;
 
 export const BtnMenuHome = styled.button`
@@ -52,8 +61,7 @@ export const BtnMenuHome = styled.button`
         color: #FFF;
         font: 14px 'roboto', sans-serif;
         font-size: 20px;
-        padding: 10px 80px; 
-
+        padding: 10px; 
     }
 `;
 
@@ -69,7 +77,7 @@ export const BtnMenuAgenda = styled.button`
         color: #FFF;
         font: 14px 'roboto', sans-serif;
         font-size: 20px;
-        padding: 10px ;
+        padding: 10px; 
     }
 `;
 export const BtnMenuRedeCredenciada = styled.button`
@@ -105,7 +113,7 @@ export const BtnMenuConsulta = styled.button`
 `;
 
 export const BtnMenuSair = styled.button`
-    margin-top: 170%;
+    margin-top: 190%;
     position: absolute;
     width: 100%;
     height: 8%;
@@ -116,85 +124,65 @@ export const BtnMenuSair = styled.button`
         color: #FFF;
         font: 14px 'roboto', sans-serif;
         font-size: 20px;
-        padding: 10px 0px; 
+        padding: 10px; 
     }
 `;
-export const MenuDiv = styled.div`
-    width: 20%;
-    height: 82%;
-    background: rgba(238, 65, 49, 0.7);
-    border-top-right-radius: 40px;
+
+export const CadastroDiv = styled.div`
     position: absolute;
-    flex-direction: column;
-`;
+    width: 60%;
+    height: 77%;
+    margin-left: 28%;
+    margin-top: 2%;
+    background: rgba(238, 65, 49, 0.4);
+    border-radius: 35px;
 
-export const ConteudoDiv = styled.div`
-    margin-left: 20%;
-    position: absolute;
-    max-height: 82%;
-    width: 78%;
-`;
-
-export const ConteudoHeader = styled.div`
-    display: flex;
-    flex-direction: row;
-    padding-left: 35%;
-    margin-bottom: 0%;
-
-    button{
-        background: none;
-        border: none;
-        padding-top: 1%;
-        text-decoration: none;
-        border-color: none;
-    }
-
-    strong{
-        padding-top: 1.5%;
-        color: #EE4131;
-        margin: 0 20px;
-        font-size: 25px;
-    }
-`;
-
-export const AgendamentoDiv = styled.div`
-    flex-direction: row;
-    display: flex;
-    
-    ul{
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 20px; 
-        margin-top: 30px;
-        
-    }
-`;
-
-
-export const Time = styled.li`
-    list-style: none;
-    padding: 15px;
-    border-radius: 20px;
-    background-color: ${props => props.available ?  'rgba(238, 65, 49, 0.7)' : 'rgba(238, 65, 49, 0.2)'};
-    opacity: ${props => props.past ? 0.5 : 1}
-
-    strong{
-        display: block;
-        color: ${props => props.available ? '#fff' : '#999'};
-        font-size: 15px;
-    }
-    span{
-        font-size: 14px;
-        display: block;
-        margin-top: 2px;
-        color: ${props => props.available ? '#fff' : '#999' };
-    }
-    button{
-        background: none;
-        border: none;
-        margin-top: 13%;
-        margin-left: 20%;
-        text-decoration: none;
+    Input{
         color: #fff;
+        margin-left: 35%;
+        background: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-color: #fff;
+        height: 35px;
+        padding-left: 10px;
+        width: 30%;
+        font: 15px 'roboto', sans-serif;
+
+        &::placeholder{
+            color: rgba(255,255,255,0.5);
+        }
     }
+    button{
+        border: 0;
+        height: 40px;
+        width: 25%;
+        background: #EE4131;
+        margin-left: 38%;
+        margin-top: 14%;
+        border-radius: 10px;
+        font: 15px 'roboto', sans-serif;
+        font-weight: bold;
+        color: #FFF;
+        transition: background 0.3s;
+        &:hover{
+            background: ${darken(0.05, `#EE4131`)}
+        }
+
+    }
+`;
+
+export const TextInput = styled.h3`
+    margin-left: 35%;
+    margin-top: 3%;
+    font: 16px 'roboto', sans-serif;
+    color: #333;
+
+`;
+
+export const TitleBody = styled.h3`
+    color: #fff;
+    margin-left: 36%;
+    font: 25px 'roboto', sans-serif;
 `;

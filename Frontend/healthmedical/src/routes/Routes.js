@@ -13,7 +13,7 @@ export default function Router() {
     const {signed, tipo_usuario} = useContext(AuthContext);
     let history = useHistory();
     if(signed === true && tipo_usuario === 'paciente' ){
-        history.push("/agendas_Paciente");
+        history.push("/agendamento_Consulta");
         return <AppPaciente />
     // }
     // if(signed === true && tipo_usuario === 'secretaria' ){
