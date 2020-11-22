@@ -18,6 +18,7 @@ routes.put('/users', UserController.update);
 
 routes.get('/medicos', MedicoController.index);
 
+routes.get('/appointments', AppointmentController.index);
 routes.post('/appointments', AppointmentController.store);
 
 export default routes;

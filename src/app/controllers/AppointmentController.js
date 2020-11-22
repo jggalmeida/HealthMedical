@@ -4,6 +4,23 @@ import User from '../models/User';
 import Appointment from '../models/Appointment';
 
 class AppointmentController{
+    async index(req, res) {
+        const appointments = await Appointment.findAll({
+            where: { user_id: req.userId, canceled_at: null },
+            order: ['date'],
+            attributes: ['id', 'date'],
+            include: [
+                {
+                    model: User,
+                    as: 'medico',
+                    attributes: ['name', 'id'],
+                },
+            ],
+        });
+
+        return res.json(appointments);
+    }
+
     async store(req, res) {
         const schema = Yup.object().shape({
             medico_id: Yup.number().required(),
