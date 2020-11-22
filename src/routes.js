@@ -3,6 +3,7 @@ import { Router } from 'express';
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 import MedicoController from './app/controllers/MedicoController';
+import AppointmentController from './app/controllers/AppointmentController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -16,5 +17,7 @@ routes.use(authMiddleware);
 routes.put('/users', UserController.update);
 
 routes.get('/medicos', MedicoController.index);
+
+routes.post('/appointments', AppointmentController.store);
 
 export default routes;
