@@ -17,17 +17,11 @@ Docker Install
 https://hub.docker.com/editions/community/docker-ce-desktop-windows/
 ```
 
-Postgres Image
-
-```
-docker pull microsoft/mssql-server-linux:2017-latest
-```
-
 Docker Run
+```
+docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+```
 
-```
-docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432
-```
 Into Backend folder run:
 
 Docker Start
@@ -40,20 +34,31 @@ docker start database
 yarn dev
 ```
 
-To create the first user (admin) run:
+Migrate tables to Database
 ```
-yarn dev
+yarn sequelize db:migrate
+```
+
+To create the first user (admin) click in the "Primeiro Usuário" button in the home page:
+```
+email: admin@admin.com
+senha: admin
 ```
 
 Access localhost to initialize the application
-
 ```
 http://localhost:3000
 ```
 
+Users Type:
+
+Admin: Can create another users
+Doctor: Can view the appointments and the schedule
+Pacient: Can make an appointment with a doctor
+
 ## Personal Inofrmation
 
 João Guilherme Guimarães Almeida - 120693
-Samuel Rodrigues - 
+Samuel Rodrigues - 160083
 
 
