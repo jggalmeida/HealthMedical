@@ -49,6 +49,10 @@ export default function Rede_Credenciada() {
     loadDados()
   }, [token])
 
+  function signout(){
+    SignOut();
+}
+
 
   return (
     <Container>
@@ -56,9 +60,9 @@ export default function Rede_Credenciada() {
         <Link to={"/dashboard_Paciente"} >
           <Logo src={logo} />
         </Link>
-        <BtnUser>
-          <Link to={"/dashboard_Paciente"}>{user.name}</Link>
-        </BtnUser>
+        <BtnMenuSair onClick={() => signout()}>
+            <Link to={"/"} >Sair</Link>
+          </BtnMenuSair>
       </HeaderDiv>
 
       <BodyDiv>

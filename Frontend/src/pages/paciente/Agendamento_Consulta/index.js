@@ -35,15 +35,16 @@ export default function Agendamento_consulta() {
   function signout(){
     SignOut();
 }
+
   return (
     <Container>
       <HeaderDiv>
         <Link to={"/dashboard_Paciente"} >
           <Logo src={logo} />
         </Link>
-        <BtnUser>
-          <Link to={"/dashboard_Paciente"}>{user.name}</Link>
-        </BtnUser>
+        <BtnMenuSair onClick={() => signout()}>
+            <Link to={"/"} >Sair</Link>
+          </BtnMenuSair>
       </HeaderDiv>
 
       <BodyDiv>

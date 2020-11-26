@@ -1,0 +1,82 @@
+import React, {useContext} from 'react'
+import { Form, Input } from '@rocketseat/unform';
+
+import {
+
+    Container,
+    HeaderDiv,
+    Logo,
+    UserNameLink,
+    BodyDiv,
+    MenuDiv,
+    BtnMenuHome,
+    BtnMenuAgenda,
+    BtnMenuRedeCredenciada,
+    BtnMenuConsulta,
+    BtnMenuSair,
+    CadastroDiv,
+    TextInput,
+    TitleBody
+
+  } from './styles';
+
+  import AuthContext from '../../../contexts/Auth';
+
+export default function CadastroUsuario(){
+    const { user, SignOut } = useContext(AuthContext);
+    
+    function signout(){
+      SignOut();
+    }
+
+    return(
+        <Container>
+        <HeaderDiv>
+         <Link to={"/dashboard_secretaria"} >
+           <Logo src={logo} />
+         </Link>
+         <UserNameLink href={"/dashboard_secretaria"}>{user.name}</UserNameLink>
+       </HeaderDiv>
+ 
+       <BodyDiv>
+         <MenuDiv>
+           <BtnMenuHome>
+             <Link to={"/dashboard_secretaria"}>Dashboard</Link>
+           </BtnMenuHome>
+           <BtnMenuAgenda>
+             <Link to={"/agenda_medica"}>Agendas</Link>
+           </BtnMenuAgenda>
+           <BtnMenuRedeCredenciada>
+             <Link to={"/rede_Credenciada"}>Rede Credenciada</Link>
+           </BtnMenuRedeCredenciada>
+           <BtnMenuConsulta>
+             <Link to={"/agenda_medica"}>Agendar Consulta</Link>
+           </BtnMenuConsulta>
+           <BtnMenuSair onClick={() => signout()}>
+            <Link to={"/"} >Sair</Link>
+          </BtnMenuSair>
+         </MenuDiv>
+ 
+         <CadastroDiv>
+             <TitleBody>Geração de Consulta</TitleBody>
+             <Form>
+                 <TextInput>Código Beneficiário: </TextInput>
+                 <Input name="Codtit" placeholder="Codigo do Beneficiário" type="text"/>
+ 
+                 <TextInput>Código Médico: </TextInput>
+                 <Input name="codMedico" placeholder="Codigo do Médico" type="text"/>
+ 
+                 <TextInput>Especialidade: </TextInput>
+                 <Input name="codEspecialidade" placeholder="Codigo da Especialidade" type="text"/>
+                 
+                 
+                 <button type="submit" >Agendar Consulta</button>
+                 
+             </Form>       
+         </CadastroDiv>
+ 
+       </BodyDiv>
+ 
+     </Container>
+    );
+}

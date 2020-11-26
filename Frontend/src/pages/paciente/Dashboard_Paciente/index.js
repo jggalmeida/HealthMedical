@@ -85,9 +85,9 @@ export default function Dashboard() {
         <Link to={"/dashboard_Paciente"} >
           <Logo src={logo} />
         </Link>
-        <BtnUser>
-          <Link to={"/dashboard_Paciente"}>{user.name}</Link>
-        </BtnUser>
+        <BtnMenuSair onClick={() => signout()}>
+            <Link to={"/"} >Sair</Link>
+          </BtnMenuSair>
       </HeaderDiv>
 
       <BodyDiv>
