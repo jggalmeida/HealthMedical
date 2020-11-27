@@ -27,14 +27,14 @@ import logo from '../../../assets/Image/Logo_Dashboard.png'
 
 
 export default function Agendamento_consulta() {
-  
+
   const { user, SignOut } = useContext(AuthContext)
 
 
- 
-  function signout(){
+
+  function signout() {
     SignOut();
-}
+  }
 
   return (
     <Container>
@@ -43,8 +43,8 @@ export default function Agendamento_consulta() {
           <Logo src={logo} />
         </Link>
         <BtnMenuSair onClick={() => signout()}>
-            <Link to={"/"} >Sair</Link>
-          </BtnMenuSair>
+          <Link to={"/"} >Sair</Link>
+        </BtnMenuSair>
       </HeaderDiv>
 
       <BodyDiv>
@@ -66,21 +66,21 @@ export default function Agendamento_consulta() {
           </BtnMenuSair>
         </MenuDiv>
         <CadastroDiv>
-            <TitleBody>Geração de Consulta</TitleBody>
-            <Form>
-                <TextInput>Código Beneficiário: </TextInput>
-                <Input name="Codtit" placeholder="Codigo do Beneficiário" type="text"/>
+          <TitleBody>Geração de Consulta</TitleBody>
+          <Form>
+            <TextInput>Código Beneficiário: </TextInput>
+            <Input name="Codtit" placeholder="Codigo do Beneficiário" type="text" />
 
-                <TextInput>Código Médico: </TextInput>
-                <Input name="codMedico" placeholder="Codigo do Médico" type="text"/>
+            <TextInput>Código Médico: </TextInput>
+            <Input name="codMedico" placeholder="Codigo do Médico" type="text" />
 
-                <TextInput>Especialidade: </TextInput>
-                <Input name="codEspecialidade" placeholder="Codigo da Especialidade" type="text"/>
-                
-                
-                <button type="submit" >Agendar Consulta</button>
-                
-            </Form>       
+            <TextInput>Especialidade: </TextInput>
+            <Input name="codEspecialidade" placeholder="Codigo da Especialidade" type="text" />
+
+
+            <button type="submit" >Agendar Consulta</button>
+
+          </Form>
         </CadastroDiv>
 
       </BodyDiv>

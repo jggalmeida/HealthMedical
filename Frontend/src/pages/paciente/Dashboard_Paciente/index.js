@@ -1,5 +1,5 @@
-import React, {useContext, useEffect, useMemo, useState} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import pt from 'date-fns/locale/pt';
 import { format, setHours, setMinutes, setSeconds } from 'date-fns';
 import { utcToZonedTime } from 'date-fns-tz'
@@ -7,7 +7,7 @@ import { utcToZonedTime } from 'date-fns-tz'
 
 import AuthContext from '../../../contexts/Auth'
 import api from '../../../services/api';
-import { 
+import {
   Container,
   HeaderDiv,
   Logo,
@@ -35,12 +35,12 @@ export default function Dashboard() {
 
 
   const dateFormated = useMemo(
-    () => format(date, "d' de 'MMMM", {locale: pt}),[date]
+    () => format(date, "d' de 'MMMM", { locale: pt }), [date]
   );
 
   useEffect(() => {
-    async function loadDados(){
-      const response = await api.get('/appointments', {headers: { Authorization: `bearer ${token}`}});
+    async function loadDados() {
+      const response = await api.get('/appointments', { headers: { Authorization: `bearer ${token}` } });
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
       const teste = range.map(hour => {
@@ -50,34 +50,34 @@ export default function Dashboard() {
         return {
           time: `${hour}:00`,
           // past: isBefore(compareDate, new Date()),
-          appointment: response.data.find( function(a){
-              if(a.date.substr(1,10) === compareDate.toISOString().substr(1,10)){
-                if (a.date.substr(11, 8) === compareDate.toISOString().substr(11, 8)){
+          appointment: response.data.find(function (a) {
+            if (a.date.substr(1, 10) === compareDate.toISOString().substr(1, 10)) {
+              if (a.date.substr(11, 8) === compareDate.toISOString().substr(11, 8)) {
 
-                  if(date.toISOString().substr(11,2) === hour){
-        
-                    console.log(a);
-                    return 
-                  }
-                  // console.log(a);
+                // if (date.toISOString().substr(11, 2) === hour) {
 
-                  return
-                }
+                //   console.log(a);
+                //   return
+                // }
+                // // console.log(a);
 
+                return
               }
+
+            }
           })
 
         };
       });
       // console.log(teste);
-      setDados(teste);
+      // setDados(teste);
     }
     loadDados();
   }, [token]);
 
 
-  function signout(){
-      SignOut();
+  function signout() {
+    SignOut();
   }
   return (
     <Container>
@@ -86,12 +86,12 @@ export default function Dashboard() {
           <Logo src={logo} />
         </Link>
         <BtnMenuSair onClick={() => signout()}>
-            <Link to={"/"} >Sair</Link>
-          </BtnMenuSair>
+          <Link to={"/"} >Sair</Link>
+        </BtnMenuSair>
       </HeaderDiv>
 
       <BodyDiv>
-      <MenuDiv>
+        <MenuDiv>
           <BtnMenuHome>
             <Link to={"/dashboard_Paciente"}>Dashboard</Link>
           </BtnMenuHome>
@@ -107,11 +107,11 @@ export default function Dashboard() {
           <BtnMenuSair onClick={() => signout()}>
             <Link to={"/"} >Sair</Link>
           </BtnMenuSair>
-      </MenuDiv>
+        </MenuDiv>
 
         <WelcomeDiv>
           <h2>Bem Vindo(a) {user.name}</h2>
- 
+
           <h3>{`você não possui ${dados.length} consultas para hoje ${dateFormated}`}</h3>
 
         </WelcomeDiv>
@@ -128,10 +128,10 @@ export default function Dashboard() {
             //   </>
             //  ))
           }
-            
+
         </DadosClienteDiv>
-      
+
       </BodyDiv>
     </Container>
-    );
+  );
 }

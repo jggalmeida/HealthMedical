@@ -43,16 +43,16 @@ export default function Rede_Credenciada() {
   const [dados, setDados] = useState([]);
 
   useEffect(() => {
-    async function loadDados(){
-      const response = await api.get('/medicos',  {headers: { Authorization: `bearer ${token}`}});
+    async function loadDados() {
+      const response = await api.get('/medicos', { headers: { Authorization: `bearer ${token}` } });
       setDados(response.data);
     }
     loadDados()
-  },[token])
+  }, [token])
 
-  function signout(){
+  function signout() {
     SignOut();
-}
+  }
 
   return (
     <Container>
@@ -69,14 +69,11 @@ export default function Rede_Credenciada() {
             <Link to={"/dashboard_secretaria"}>Dashboard</Link>
           </BtnMenuHome>
           <BtnMenuAgenda>
-            <Link to={"/agenda_medica"}>Agendas</Link>
+            <Link to={"/cadastro_usuario"}>Cadastrar Usuário</Link>
           </BtnMenuAgenda>
           <BtnMenuRedeCredenciada>
-             <Link to={"/cadastro_usuario"}>Cadastrar Usuário</Link>
-           </BtnMenuRedeCredenciada>
-           <BtnMenuConsulta>
-           <Link to={"/cadastro_medico"}>Cadastrar Medico </Link>
-           </BtnMenuConsulta>
+            <Link to={"/cadastro_medico"}>Cadastrar Medico </Link>
+          </BtnMenuRedeCredenciada>
           <BtnMenuSair onClick={() => signout()}>
             <Link to={"/"} >Sair</Link>
           </BtnMenuSair>

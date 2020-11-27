@@ -35,8 +35,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Rede_Credenciada() {
   const classes = useStyles();
-  const { user } = useContext(AuthContext);
+  const { user, token, SignOut } = useContext(AuthContext)
   const [dados] = useState([
+
+
     {
       id: 1,
       medico: 'Clinica Popular Saúde da Família',
@@ -149,6 +151,10 @@ export default function Rede_Credenciada() {
 
   ]);
 
+  function signout() {
+    SignOut();
+  }
+
   return (
     <Container>
       <HeaderDiv>
@@ -159,24 +165,21 @@ export default function Rede_Credenciada() {
       </HeaderDiv>
 
       <BodyDiv>
-      <MenuDiv>
+        <MenuDiv>
           <BtnMenuHome>
             <Link to={"/dashboard_secretaria"}>Dashboard</Link>
           </BtnMenuHome>
           <BtnMenuAgenda>
-            <Link to={"/agenda_medica"}>Agendas</Link>
+            <Link to={"/cadastro_usuario"}>Cadastrar Usuário</Link>
           </BtnMenuAgenda>
           <BtnMenuRedeCredenciada>
-             <Link to={"/cadastro_usuario"}>Cadastrar Usuário</Link>
-           </BtnMenuRedeCredenciada>
-           <BtnMenuConsulta>
-           <Link to={"/cadastro_medico"}>Cadastrar Medico </Link>
-           </BtnMenuConsulta>
-          <BtnMenuSair>
-            <Link to={"/signin"}>Sair</Link>
+            <Link to={"/cadastro_medico"}>Cadastrar Medico </Link>
+          </BtnMenuRedeCredenciada>
+          <BtnMenuSair onClick={() => signout()}>
+            <Link to={"/"} >Sair</Link>
           </BtnMenuSair>
-      </MenuDiv>
-        
+        </MenuDiv>
+
         <List>
           <Title>Rede Credenciada</Title>
           <GridList className={classes.gridList} >

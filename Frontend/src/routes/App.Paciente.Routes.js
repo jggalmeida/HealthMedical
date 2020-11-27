@@ -8,8 +8,8 @@ import Agendar_Consulta from '../pages/paciente/Agendar_Consulta';
 import Agendamento_Consulta from '../pages/paciente/Agendamento_Consulta';
 
 
-export default function Routes(){
-    return(
+export default function Routes() {
+    return (
         <BrowserRouter>
             <Switch>
                 <Route path="/dashboard_Paciente" exact component={Dashboard_Paciente} />

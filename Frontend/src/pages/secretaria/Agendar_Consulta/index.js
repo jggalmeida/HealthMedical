@@ -27,11 +27,15 @@ import logo from '../../../assets/Image/Logo_Dashboard.png'
 
 
 export default function Agendamento_consulta() {
-  const { user } = useContext(AuthContext);
+  const { user, token, SignOut } = useContext(AuthContext);
+
+  function signout() {
+    SignOut();
+  }
 
   return (
     <Container>
-       <HeaderDiv>
+      <HeaderDiv>
         <Link to={"/dashboard_secretaria"} >
           <Logo src={logo} />
         </Link>
@@ -44,35 +48,32 @@ export default function Agendamento_consulta() {
             <Link to={"/dashboard_secretaria"}>Dashboard</Link>
           </BtnMenuHome>
           <BtnMenuAgenda>
-            <Link to={"/agenda_medica"}>Agendas</Link>
+            <Link to={"/cadastro_usuario"}>Cadastrar Usuário</Link>
           </BtnMenuAgenda>
           <BtnMenuRedeCredenciada>
-             <Link to={"/cadastro_usuario"}>Cadastrar Usuário</Link>
-           </BtnMenuRedeCredenciada>
-           <BtnMenuConsulta>
-           <Link to={"/cadastro_medico"}>Cadastrar Medico </Link>
-           </BtnMenuConsulta>
-          <BtnMenuSair>
-            <Link to={"/signin"}>Sair</Link>
+            <Link to={"/cadastro_medico"}>Cadastrar Medico </Link>
+          </BtnMenuRedeCredenciada>
+          <BtnMenuSair onClick={() => signout()}>
+            <Link to={"/"} >Sair</Link>
           </BtnMenuSair>
         </MenuDiv>
 
         <CadastroDiv>
-            <TitleBody>Geração de Consulta</TitleBody>
-            <Form>
-                <TextInput>Código Beneficiário: </TextInput>
-                <Input name="Codtit" placeholder="Codigo do Beneficiário" type="text"/>
+          <TitleBody>Geração de Consulta</TitleBody>
+          <Form>
+            <TextInput>Código Beneficiário: </TextInput>
+            <Input name="Codtit" placeholder="Codigo do Beneficiário" type="text" />
 
-                <TextInput>Código Médico: </TextInput>
-                <Input name="codMedico" placeholder="Codigo do Médico" type="text"/>
+            <TextInput>Código Médico: </TextInput>
+            <Input name="codMedico" placeholder="Codigo do Médico" type="text" />
 
-                <TextInput>Especialidade: </TextInput>
-                <Input name="codEspecialidade" placeholder="Codigo da Especialidade" type="text"/>
-                
-                
-                <button type="submit" >Agendar Consulta</button>
-                
-            </Form>       
+            <TextInput>Especialidade: </TextInput>
+            <Input name="codEspecialidade" placeholder="Codigo da Especialidade" type="text" />
+
+
+            <button type="submit" >Agendar Consulta</button>
+
+          </Form>
         </CadastroDiv>
 
       </BodyDiv>

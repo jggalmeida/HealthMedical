@@ -1,10 +1,10 @@
-import React, {useContext, useMemo, useState} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useContext, useMemo, useState } from 'react';
+import { Link, useHistory} from 'react-router-dom';
 
 import { format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 
-import { 
+import {
   Container,
   HeaderDiv,
   Logo,
@@ -27,16 +27,17 @@ import AuthContext from '../../../contexts/Auth'
 export default function Dashboard() {
   const [date] = useState(new Date());
   const { user, SignOut } = useContext(AuthContext);
+  let history = useHistory();
 
   const dateFormated = useMemo(
-    () => format(date, "d' de 'MMMM", {locale: pt}),[date]
+    () => format(date, "d' de 'MMMM", { locale: pt }), [date]
   );
   const dateFormated2 = useMemo(
-    () => format(date, "d' / 'MM", {locale: pt}),[date]
+    () => format(date, "d' / 'MM", { locale: pt }), [date]
   );
-  function signout(){
+  function signout() {
     SignOut();
-}
+  }
 
   return (
     <Container>
@@ -48,7 +49,7 @@ export default function Dashboard() {
       </HeaderDiv>
 
       <BodyDiv>
-      <MenuDiv>
+        <MenuDiv>
           <BtnMenuHome>
             <Link to={"/Dashboard_Medico"}>Dashboard</Link>
           </BtnMenuHome>
@@ -58,13 +59,14 @@ export default function Dashboard() {
           <BtnMenuSair onClick={() => signout()}>
             <Link to={"/"} >Sair</Link>
           </BtnMenuSair>
-      </MenuDiv>
+        </MenuDiv>
 
         <WelcomeDiv>
           <h2>Bem Vindo(a) {user.nome}</h2>
           <h3>{`você possuí 10 consultas para hoje: ${dateFormated}`}</h3>
 
         </WelcomeDiv>
+        <button onClick={() => history.push('/SignUp')} >Sign Up</button>
 
         <ConsultasOntem>
           <h2>Consultas Ontem</h2>
@@ -89,5 +91,5 @@ export default function Dashboard() {
 
       </BodyDiv>
     </Container>
-    );
+  );
 }

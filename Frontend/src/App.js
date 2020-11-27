@@ -7,7 +7,7 @@ import './config/ReactotronConfig'
 import Routes from './routes/Routes';
 import history from './services/history';
 
-import {AuthProvider} from './contexts/Auth';
+import { AuthProvider } from './contexts/Auth';
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         <Routes />
         {/* <GlobalStyle /> */}
       </Router>
-    </AuthProvider> 
-   
+    </AuthProvider>
+
   );
 }
 

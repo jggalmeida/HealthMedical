@@ -42,7 +42,7 @@ export default function Agendar_Consulta() {
 
   useEffect(() => {
     async function loadDados() {
-      const response = await api.get('/appointments', {headers: { Authorization: `bearer ${token}`}});
+      const response = await api.get('/appointments', { headers: { Authorization: `bearer ${token}` } });
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
       const teste = range.map(hour => {
@@ -52,12 +52,12 @@ export default function Agendar_Consulta() {
         return {
           time: `${hour}:00`,
           past: isBefore(compareDate, new Date()),
-          appointment: response.data.find( function(a){
-              if(a.date.substr(1,10) === compareDate.toISOString().substr(1,10)){
-                if (a.date.substr(11, 8) === compareDate.toISOString().substr(11, 8)){
-                  return a
-                }
+          appointment: response.data.find(function (a) {
+            if (a.date.substr(1, 10) === compareDate.toISOString().substr(1, 10)) {
+              if (a.date.substr(11, 8) === compareDate.toISOString().substr(11, 8)) {
+                return a
               }
+            }
           })
 
         };
@@ -70,9 +70,9 @@ export default function Agendar_Consulta() {
   }, [date])
 
 
-  function signout(){
+  function signout() {
     SignOut();
-}
+  }
 
   const dateFormated = useMemo(
     () => format(date, "d 'de' MMMM", { locale: pt }), [date]
@@ -103,14 +103,11 @@ export default function Agendar_Consulta() {
             <Link to={"/dashboard_secretaria"}>Dashboard</Link>
           </BtnMenuHome>
           <BtnMenuAgenda>
-            <Link to={"/agenda_medica"}>Agendas</Link>
+            <Link to={"/cadastro_usuario"}>Cadastrar Usuário</Link>
           </BtnMenuAgenda>
           <BtnMenuRedeCredenciada>
-             <Link to={"/cadastro_usuario"}>Cadastrar Usuário</Link>
-           </BtnMenuRedeCredenciada>
-           <BtnMenuConsulta>
-           <Link to={"/cadastro_medico"}>Cadastrar Medico </Link>
-           </BtnMenuConsulta>
+            <Link to={"/cadastro_medico"}>Cadastrar Medico </Link>
+          </BtnMenuRedeCredenciada>
           <BtnMenuSair onClick={() => signout()}>
             <Link to={"/"} >Sair</Link>
           </BtnMenuSair>
@@ -136,7 +133,7 @@ export default function Agendar_Consulta() {
                   <Time key={time.time} past={time.past} available={!time.appointment}>
                     <strong>{time.time}</strong>
                     <span>{time.appointment ? time.appointment.user.name : 'em aberto'}</span>
-                    
+
 
                   </Time>
                 ))

@@ -42,7 +42,7 @@ export default function Agendar_Consulta() {
 
   useEffect(() => {
     async function loadDados() {
-      const response = await api.get('/appointments', {headers: { Authorization: `bearer ${token}`}});
+      const response = await api.get('/appointments', { headers: { Authorization: `bearer ${token}` } });
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
       const teste = range.map(hour => {
@@ -52,12 +52,12 @@ export default function Agendar_Consulta() {
         return {
           time: `${hour}:00`,
           past: isBefore(compareDate, new Date()),
-          appointment: response.data.find( function(a){
-              if(a.date.substr(1,10) === compareDate.toISOString().substr(1,10)){
-                if (a.date.substr(11, 8) === compareDate.toISOString().substr(11, 8)){
-                  return a
-                }
+          appointment: response.data.find(function (a) {
+            if (a.date.substr(1, 10) === compareDate.toISOString().substr(1, 10)) {
+              if (a.date.substr(11, 8) === compareDate.toISOString().substr(11, 8)) {
+                return a
               }
+            }
           })
 
         };
@@ -70,9 +70,9 @@ export default function Agendar_Consulta() {
   }, [date])
 
 
-  function signout(){
+  function signout() {
     SignOut();
-}
+  }
 
   const dateFormated = useMemo(
     () => format(date, "d 'de' MMMM", { locale: pt }), [date]
@@ -87,12 +87,12 @@ export default function Agendar_Consulta() {
     setDate(addDays(date, 1));
   }
 
-  async function Agendar_Consulta(time){
-    const data = dateFormated2+'T'+time+':00.000'
-    const response =  await api.post('/appointments',{
+  async function Agendar_Consulta(time) {
+    const data = dateFormated2 + 'T' + time + ':00.000'
+    const response = await api.post('/appointments', {
       "medico_id": `${id}`,
       "date": `${data}`
-    }, {headers: { Authorization: `bearer ${token}`}})
+    }, { headers: { Authorization: `bearer ${token}` } })
 
     console.log(response);
   }
@@ -146,8 +146,8 @@ export default function Agendar_Consulta() {
                 dados.map(time => (
                   <Time key={time.time} past={time.past} available={!time.appointment}>
                     <strong>{time.time}</strong>
-                    <span>{time.appointment ? `Paciente: ${time.appointment.user.name }`: 'em aberto'}</span>
-                    <span>{time.appointment ? `Médico: ${time.appointment.medico.name }`: ''}</span>
+                    <span>{time.appointment ? `Paciente: ${time.appointment.user.name}` : 'em aberto'}</span>
+                    <span>{time.appointment ? `Médico: ${time.appointment.medico.name}` : ''}</span>
                     <button onClick={() => Agendar_Consulta(time.time)}>{time.appointment ? null : 'Agendar'}</button>
 
                   </Time>

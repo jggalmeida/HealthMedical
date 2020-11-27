@@ -41,15 +41,15 @@ export default function Rede_Credenciada() {
   const [dados, setDados] = useState([]);
 
   useEffect(() => {
-    async function loadDados(){
-      const response = await api.get('/medicos',  {headers: { Authorization: `bearer ${token}`}});
+    async function loadDados() {
+      const response = await api.get('/medicos', { headers: { Authorization: `bearer ${token}` } });
       setDados(response.data);
     }
 
     loadDados()
   }, [token])
 
-  function signout(){
+  function signout() {
     SignOut();
   }
 
@@ -59,9 +59,9 @@ export default function Rede_Credenciada() {
         <Link to={"/dashboard_Paciente"} >
           <Logo src={logo} />
         </Link>
-          <BtnMenuSair onClick={() => signout()}>
-            <Link to={"/"} >Sair</Link>
-          </BtnMenuSair>
+        <BtnMenuSair onClick={() => signout()}>
+          <Link to={"/"} >Sair</Link>
+        </BtnMenuSair>
       </HeaderDiv>
 
       <BodyDiv>

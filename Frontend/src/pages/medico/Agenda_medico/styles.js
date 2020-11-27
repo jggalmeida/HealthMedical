@@ -168,7 +168,7 @@ export const Time = styled.li`
     list-style: none;
     padding: 15px;
     border-radius: 20px;
-    background-color: ${props => props.available ?  'rgba(238, 65, 49, 0.7)' : 'rgba(238, 65, 49, 0.2)'};
+    background-color: ${props => props.available ? 'rgba(238, 65, 49, 0.7)' : 'rgba(238, 65, 49, 0.2)'};
     opacity: ${props => props.past ? 0.5 : 1}
 
     strong{
@@ -180,7 +180,7 @@ export const Time = styled.li`
         font-size: 17px;
         display: block;
         margin-top: 2px;
-        color: ${props => props.available ? '#fff' : '#999' };
+        color: ${props => props.available ? '#fff' : '#999'};
     }
     button{
         background: none;

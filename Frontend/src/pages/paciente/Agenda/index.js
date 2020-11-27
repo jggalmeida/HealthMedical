@@ -43,16 +43,16 @@ export default function Rede_Credenciada() {
   const [dados, setDados] = useState([]);
 
   useEffect(() => {
-    async function loadDados(){
-      const response = await api.get('/medicos',  {headers: { Authorization: `bearer ${token}`}});
+    async function loadDados() {
+      const response = await api.get('/medicos', { headers: { Authorization: `bearer ${token}` } });
       setDados(response.data);
     }
     loadDados()
-  },[token])
+  }, [token])
 
-  function signout(){
+  function signout() {
     SignOut();
-}
+  }
 
   return (
     <Container>
