@@ -26,7 +26,7 @@ import {
   import logo from '../../../assets/Image/Logo_Dashboard.png'
   import api from '../../../services/api';
 
-export default function CadastroUsuario(){
+export default function CadastroMedico(){
     const { user, SignOut } = useContext(AuthContext);
     let history = useHistory();
     
@@ -40,7 +40,7 @@ export default function CadastroUsuario(){
         "name": `${name}`,
         "email":`${email}`,
         "password":`${password}`,
-        "user_type":`Paciente`,
+        "user_type":`Medico`,
         "endereco":`${endereco}`,
         "cidade":`${cidade}`,
         "bairro":`${bairro}`,

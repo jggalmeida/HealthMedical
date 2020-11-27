@@ -167,11 +167,11 @@ export default function Rede_Credenciada() {
             <Link to={"/agenda_medica"}>Agendas</Link>
           </BtnMenuAgenda>
           <BtnMenuRedeCredenciada>
-            <Link to={"/rede_Credenciada"}>Rede Credenciada</Link>
-          </BtnMenuRedeCredenciada>
-          <BtnMenuConsulta>
-            <Link to={"/agenda_medica"}>Agendar Consulta</Link>
-          </BtnMenuConsulta>
+             <Link to={"/cadastro_usuario"}>Cadastrar Usuário</Link>
+           </BtnMenuRedeCredenciada>
+           <BtnMenuConsulta>
+           <Link to={"/cadastro_medico"}>Cadastrar Medico </Link>
+           </BtnMenuConsulta>
           <BtnMenuSair>
             <Link to={"/signin"}>Sair</Link>
           </BtnMenuSair>

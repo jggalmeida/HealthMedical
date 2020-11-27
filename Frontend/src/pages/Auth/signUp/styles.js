@@ -4,96 +4,71 @@ import { darken } from 'polished';
 export const Container = styled.div`
   flex: 1;
   flex-direction: row;
-  background: rgba(	238, 65, 49, 0.6);
+  background-color: rgba(238, 65, 49, 0.6);
   height: 100%;
   width: 100%;
+  position: absolute;
 `;
 
-export const Imagem = styled.img`
-    margin-left: 43%;
-    margin-top: 3%;
+export const BodyDiv = styled.div`
+
 `;
 
-export const LogoImg = styled.img`
-    margin-left: 33%;
-    margin-top: 13%;
-`;
 
-export const DivInput = styled.div`
-    flex: 1;
+export const CadastroDiv = styled.div`
     position: absolute;
-    background: rgba(255,255,255, 0.5);
-    margin-top: 3%;
-    margin-left: 10%;
-    width: 23%;
-    height: 87%;
-    border-radius: 30px;
-
-    Form{
-        display: flex;
-        flex-direction: column;
-        color: rgba(0,0,0,0.7);
-    }
+    width: 60%;
+    height: 95%;
+    margin-left: 20%;
+    border-radius: 35px;
+    margin-top: 1%;
+    background-color: rgba(255,255,255,0.5);
 
     Input{
-        color: rgba(0, 0, 0, 0.8);
-        margin-left: 10%;
-        margin-top: 2%;
-        background: rgba(255, 255, 255, 0.7);
-        border: 0;
-        border-radius: 10px;
-        height: 35px;
-        width: 80%;
-        padding-left: 10px;
+        color: #fff;
+        margin-left: 35%;
+        background: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-color: #fff;
+        height: 20px;
+        padding-bottom: 5px;
+        width: 30%;
+        font: 15px 'roboto', sans-serif;
 
         &::placeholder{
-            color: rgba(0, 0, 0, 0.5);
+            color: rgba(0,0,0,0.5);
         }
     }
     button{
         border: 0;
         height: 40px;
-        width: 30%;
+        width: 25%;
         background: #EE4131;
-        margin-left: 35%;
-        margin-top: 8%;
+        margin-left: 38%;
+        margin-top: 1.5%;
         border-radius: 10px;
-        font-size: 16px;
+        font: 15px 'roboto', sans-serif;
         font-weight: bold;
         color: #FFF;
         transition: background 0.3s;
         &:hover{
             background: ${darken(0.05, `#EE4131`)}
         }
-    }
-    a{
-        color: #EE4131;
-        margin-top: 7%;
-        opacity: 0.6;
-        margin-left: 43%;
-        font-size: 16px;
-        transition: opacity 0.3s;
-        &:hover{
-            opacity: 1;
-        }
-    }
-`;
 
-export const Title = styled.h1`
-    margin-left: 35%;
-    margin-top: 5%;
+    }
 `;
 
 export const TextInput = styled.h3`
-    margin-left: 16%;
-    margin-top: 6%;
-    font-size: 16px;
+    margin-left: 35%;
+    font: 16px 'roboto', sans-serif;
+    color: #333;
+
 `;
 
-
-export const ButtonLinkDiv = styled.div`
-    flex: 1;
-    margin-top: 5%;
-    text-align: center;
-   
+export const TitleBody = styled.h3`
+    color: #fff;
+    margin-left: 36%;
+    font: 40px 'roboto', sans-serif;
 `;

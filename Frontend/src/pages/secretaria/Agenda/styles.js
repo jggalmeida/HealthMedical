@@ -19,10 +19,11 @@ export const Logo = styled.img`
 
 export const UserNameLink = styled.a`
     font-size: 24px;
-    margin-left: 48%;
+    margin-left: 68%;
     margin-top: 3%;
     position: absolute;
     color: #EE4131;
+    text-decoration: none;
 `;
 
 
@@ -32,12 +33,13 @@ export const BodyDiv = styled.div`
 
 export const MenuDiv = styled.div`
     width: 20%;
-    height: 82%;
+    height: 84%;
     background: rgba(238, 65, 49, 0.7);
     border-top-right-radius: 40px;
     position: absolute;
     flex-direction: column;
 `;
+
 export const BtnMenuHome = styled.button`
     margin-top: 10%;
     position: absolute;

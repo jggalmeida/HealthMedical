@@ -1,8 +1,7 @@
 import React, {useContext} from 'react';
-
 import { Form, Input } from '@rocketseat/unform';
-
 import AuthContext from '../../../contexts/Auth';
+import { Link, useHistory } from 'react-router-dom';
 
 import { 
   Container,
@@ -18,7 +17,7 @@ import {
  import img1 from '../../../assets/Image/image.png';
 
 export default function SignIn() {
-  
+  let history = useHistory();
   const { AuthLogin } = useContext(AuthContext);
 
   async function handleSubmit({email, password}){
@@ -40,6 +39,7 @@ export default function SignIn() {
           <Input name="password" placeholder="Insira sua Senha" type="password"/>
         
           <button type="submit" >Entrar</button>
+          <button onClick={() => history.push('/SignUp')} >Sign Up</button>
           
         </Form>       
       </DivInput>

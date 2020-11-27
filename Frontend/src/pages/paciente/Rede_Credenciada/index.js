@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Rede_Credenciada() {
   const classes = useStyles();
-  const { user, token } = useContext(AuthContext);
+  const { user, token, SignOut } = useContext(AuthContext);
   const [dados, setDados] = useState([]);
 
   useEffect(() => {
@@ -51,8 +51,7 @@ export default function Rede_Credenciada() {
 
   function signout(){
     SignOut();
-}
-
+  }
 
   return (
     <Container>
@@ -60,7 +59,7 @@ export default function Rede_Credenciada() {
         <Link to={"/dashboard_Paciente"} >
           <Logo src={logo} />
         </Link>
-        <BtnMenuSair onClick={() => signout()}>
+          <BtnMenuSair onClick={() => signout()}>
             <Link to={"/"} >Sair</Link>
           </BtnMenuSair>
       </HeaderDiv>

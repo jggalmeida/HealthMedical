@@ -94,9 +94,7 @@ export default function Agendar_Consulta() {
         <Link to={"/dashboard_secretaria"} >
           <Logo src={logo} />
         </Link>
-        <UserNameLink>
-          <Link to={"/dashboard_secretaria"}>{user.name}</Link>
-        </UserNameLink>
+        <UserNameLink href={"/dashboard_secretaria"}>{user.name}</UserNameLink>
       </HeaderDiv>
 
       <BodyDiv>
@@ -108,11 +106,11 @@ export default function Agendar_Consulta() {
             <Link to={"/agenda_medica"}>Agendas</Link>
           </BtnMenuAgenda>
           <BtnMenuRedeCredenciada>
-            <Link to={"/rede_Credenciada"}>Rede Credenciada</Link>
-          </BtnMenuRedeCredenciada>
-          <BtnMenuConsulta>
-            <Link to={"/agenda_medica"}>Cadastrar Usuário</Link>
-          </BtnMenuConsulta>
+             <Link to={"/cadastro_usuario"}>Cadastrar Usuário</Link>
+           </BtnMenuRedeCredenciada>
+           <BtnMenuConsulta>
+           <Link to={"/cadastro_medico"}>Cadastrar Medico </Link>
+           </BtnMenuConsulta>
           <BtnMenuSair onClick={() => signout()}>
             <Link to={"/"} >Sair</Link>
           </BtnMenuSair>
