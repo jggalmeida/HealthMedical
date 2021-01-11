@@ -1,6 +1,6 @@
 # HealthMedical
 
-> Management System to create, edit, delete and create appointments.
+> Management System to create, edit and delete appointments.
 
 
 ## Run Application
